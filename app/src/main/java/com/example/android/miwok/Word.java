@@ -17,17 +17,22 @@ public class Word {
     //represents no image
     private static final int NO_IMAGE_PROVIDED = -1;
 
+    //audio resource id
+    private int mAudioResourceId;
+
     //Constructor without image resource id
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
     }
 
     //Constructor with image resource id
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceId;
+        mAudioResourceId = audioResourceId;
     }
 
     //Get the default translation of the word.
@@ -48,5 +53,10 @@ public class Word {
     //Returns whether or not there is an image for this word.
     public boolean hasImage() {
         return mImageResourceId != NO_IMAGE_PROVIDED;
+    }
+
+    //returns audio resource id
+    public int getmAudioResourceId() {
+        return mAudioResourceId;
     }
 }
